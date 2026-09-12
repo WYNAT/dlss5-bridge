@@ -12,6 +12,16 @@
 **A bridge for DLSS 5 Neural Rendering add-ons in DirectX 11 and Vulkan games,
 with an optional optical-flow path for games without DLSS.**
 
+> [!NOTE]
+> **Linux / Steam Proton Fork** — This fork adds a fully automated patching workflow for Linux users running Windows games via Steam Proton.
+> A single script downloads all required files, configures DXVK, sets up Wine DLL overrides and extends your Steam launch options non-destructively.
+>
+> ```bash
+> bash tools/patch-proton.sh /path/to/steamapps/common/YourGame
+> ```
+>
+> → Full guide: **[docs/proton-guide.md](docs/proton-guide.md)**
+
 A ReShade add-on that mirrors a DirectX 11 or Vulkan game's DLSS onto a private
 DirectX 12 session, where a compatible neural rendering add-on can process it.
 For games without DLSS, it can build substitute inputs from ReShade's depth
@@ -121,10 +131,9 @@ replaces the file with its own defaults on first run and says so in the log;
 the same version never touches it. `# dlss5-bridge keep` as the first line
 keeps a file across versions.
 
-**Linux / Steam Proton:** An automated patching script is provided in
-[`tools/patch-proton.sh`](tools/patch-proton.sh). For Proton requirements,
-Steam launch options and configuration tips (e.g. mandatory `unwrap=0`),
-see the [Proton Guide](docs/proton-guide.md).
+**Linux / Steam Proton:** See the [Linux / Steam Proton Fork](#) callout at the top and the full
+[Proton Guide](docs/proton-guide.md) for automated patching, DXVK configuration, Wine prefix
+setup and mandatory settings (e.g. `unwrap=0`).
 
 **Games without DLSS.** The substitute contract needs three files beside the
 game's executable that such a game does not bring: the DLSS 5 add-on and its
