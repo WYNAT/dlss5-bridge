@@ -121,6 +121,11 @@ replaces the file with its own defaults on first run and says so in the log;
 the same version never touches it. `# dlss5-bridge keep` as the first line
 keeps a file across versions.
 
+**Linux / Steam Proton:** An automated patching script is provided in
+[`tools/patch-proton.sh`](tools/patch-proton.sh). For Proton requirements,
+Steam launch options and configuration tips (e.g. mandatory `unwrap=0`),
+see the [Proton Guide](docs/proton-guide.md).
+
 **Games without DLSS.** The substitute contract needs three files beside the
 game's executable that such a game does not bring: the DLSS 5 add-on and its
 `nvngx_dlssnr.dll`, and a **`nvngx_dlss.dll` of version 3.1.13 or newer**,
